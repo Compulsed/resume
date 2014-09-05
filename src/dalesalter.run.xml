@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>cv_10.bcf</file>
+      <file>dalesalter.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>cv_10.bbl</file>
+      <file>dalesalter.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -65,19 +65,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>cv_10</infile>
+      <infile>dalesalter</infile>
     </cmdline>
     <input>
-      <file>cv_10.bcf</file>
+      <file>dalesalter.bcf</file>
     </input>
     <output>
-      <file>cv_10.bbl</file>
+      <file>dalesalter.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>cv_10.bbl</file>
+      <file>dalesalter.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>cv_10.bcf</file>
+      <file>dalesalter.bcf</file>
     </requires>
     <requires type="editable">
       <file>bibliography.bib</file>
