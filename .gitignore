@@ -24,4 +24,12 @@
 *.out
 *.synctex.gz
 
+*.DS_Store
+
 pdf/*
+src/*.aux
+src/*.log
+src/*.out
+src/*.xml
+src/cover.tex
+src/*.bcf
