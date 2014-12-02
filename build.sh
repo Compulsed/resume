@@ -1,31 +1,33 @@
 #!/bin/bash
 
-# Check if there are three arguments
-if [ $# -eq 3 ]; then
-    # Check if the input files actually exist 
-    if ! [[ -f "src/$1.tex" ]]; then 
-       echo "The input file $1.tex does not exist."
-       exit 1
-    fi
-
-    if ! [[ -f "src/$2.tex" ]]; then 
-       echo "The input file $2.tex does not exist." 
-       exit 1 
-    fi 
-else
-   echo "Usage: $0 [input tex] [intput tex] [output]"
-   exit 1
+if [ $# -eq 0 ]
+  then
+  echo "Usage: [Cover Letter Title] [Cover file].tex [Output Pdf].pdf"
+  exit 1
 fi
-  
+
+
+coverFile="cover"
+resumeFile="resume"
+
+cp src/cover-template.tex src/cover.tex
+sed -i -e "s/REPLACE1/$1/g" src/cover.tex     #title
+sed -i -e "s/REPLACE2/$2.tex/g" src/cover.tex #content
+
+
 # Creates the merged PDF
 cd src;
 
-pdflatex --shell-escape $1;
-lualatex $2;
+# Generates the cover letter
+pdflatex --shell-escape $coverFile;
 
-mv $1.pdf ../;
-mv $2.pdf ../;
+# Generates the resume itself
+lualatex $resumeFile;
+
+mv $coverFile.pdf ../pdf/;
+mv $resumeFile.pdf ../pdf/;
 
 cd ../;
 
-gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=$3.pdf -dBATCH $1.pdf $2.pdf;
+# Merges the actual PDFs together
+gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=pdf/$3.pdf -dBATCH pdf/$coverFile.pdf pdf/$resumeFile.pdf;

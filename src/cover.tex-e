@@ -22,6 +22,6 @@
 \maketitle
 
 % Content
-\input{../cover-files/impos.tex}
+\input{../cover-files/REPLACE2}
 
 \end{document}
