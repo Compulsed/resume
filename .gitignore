@@ -26,7 +26,8 @@
 
 *.DS_Store
 
-pdf/*
+pdf/*.pdf
+
 src/*.aux
 src/*.log
 src/*.out

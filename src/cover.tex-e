@@ -1,0 +1,27 @@
+\documentclass[10pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % load a font with all the characters
+
+
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+
+% The title details
+\title{Swag}
+\subtitle{Cover Letter}
+\author{Dale Salter}
+\date{\today}
+
+% Header
+
+\begin{document}
+\pagenumbering{gobble} % Remove page numbers (and reset to 1)
+
+\maketitle
+
+% Content
+\input{../cover-files/REPLACE2}
+
+\end{document}
