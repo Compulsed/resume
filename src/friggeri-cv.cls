@@ -79,8 +79,8 @@
       {\thinfont #1}{\bodyfont  #2}
     };
     \node [anchor=north] at (name.south) {%
-      \fontsize{14pt}{24pt}\color{header}%
-      \thinfont #3%
+      \fontsize{24pt}{24pt}\color{header}%
+      \thinfont #2%
     };
   \end{tikzpicture}
   \vspace{2.5cm}
