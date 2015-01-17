@@ -29,6 +29,7 @@ mv $resumeTemp.pdf ../pdf/;
 
 cd ../pdf/;
 
+
 coverName="$coverTemp.pdf"
 resumeName="$resumeTemp.pdf"
 
